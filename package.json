@@ -1,0 +1,14 @@
+{
+  "name": "eliptik-packages",
+  "version": "1.0.3",
+  "description": "Eliptik's components",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Eliptik"
+  ],
+  "author": "Eliptik1",
+  "license": "ISC"
+}
