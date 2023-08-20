@@ -1,7 +1,8 @@
 function createMenu(parentElement, menuText) {
+    const menuId = menuText.replace(/\s+/g, "_"); // Replace spaces with underscores for the id
     const dropdownContainer = document.createElement("div");
     dropdownContainer.classList.add("dropdown-container");
-    dropdownContainer.setAttribute("id", menuText);
+    dropdownContainer.setAttribute("id", menuId);
 
     const dropBtn = document.createElement("button");
     dropBtn.classList.add("dropbtn");
@@ -15,8 +16,7 @@ function createMenu(parentElement, menuText) {
 }
 
 function addMenuItem(parentMenuID, itemText, itemLink) {
-    const parentMenu = document.querySelector(`#${parentMenuID}`);
-
+    const parentMenu = document.querySelector(`#${parentMenuID.replace(/\s+/g, "_")}`); // Replace spaces with underscores in the id
     if (!parentMenu) {
         console.error(`Parent menu with ID ${parentMenuID} not found.`);
         return;
