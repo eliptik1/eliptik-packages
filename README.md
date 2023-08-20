@@ -10,8 +10,10 @@ You can install the package using npm:
 npm install eliptik-packages
 ```
 
-Import the functions from the package
+Import the functions and style.css from the package
 ```js
+import 'eliptik-packages/style.css'
+
 import { createMenu, addMenuItem } from 'eliptik-packages';
 ```
 
