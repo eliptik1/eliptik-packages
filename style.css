@@ -43,8 +43,15 @@
 }
 
 /* Hamburger menu & modal styles */
-#hamburger-menu  img {
+#hamburger-menu {
+    user-select: none;
     width: 35px;
+}
+#hamburger-menu  div {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    cursor: pointer;
 }
 .burger {
     position: relative;
@@ -83,7 +90,7 @@
 
 /* Overlay */
 #menu-overlay {
-    opacity: 0;
+    display: none;
     pointer-events: all;
     position: fixed;
     top: 0;
@@ -93,5 +100,5 @@
     background-color: rgba(0,0,0,.5);
 }
 #menu-overlay.active {
-    opacity: 1;
+    display: block;
 }

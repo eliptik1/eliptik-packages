@@ -44,16 +44,14 @@ function createHamburger(buttonContainer, sidebarContainer, sidebarOptional) {
     burgerInput.type = "checkbox";
     burgerInput.id = "burger";
 
-    // Create the open menu image
-    const burgerOpenImg = document.createElement("img");
-    burgerOpenImg.id = "burger-open";
-    burgerOpenImg.src = "./assets/hamburger.svg";
-    burgerOpenImg.alt = "open-menu";
-    // Create the close menu image
-    const burgerCloseImg = document.createElement("img");
-    burgerCloseImg.id = "burger-close";
-    burgerCloseImg.src = "./assets/remove.svg";
-    burgerCloseImg.alt = "close-menu";
+   // Create the open menu image
+   const burgerOpenImg = document.createElement("div");
+   burgerOpenImg.id = "burger-open";
+   burgerOpenImg.textContent = "☰"
+   // Create the close menu image
+   const burgerCloseImg = document.createElement("div");
+   burgerCloseImg.id = "burger-close";
+   burgerCloseImg.textContent = "✕";
 
     // Append the input and images to the label
     hamburgerLabel.appendChild(burgerInput);
