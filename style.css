@@ -1,3 +1,4 @@
+/* Dropdown styles*/
 .dropdown-container {
     position: relative;
     display: inline-block;
@@ -38,5 +39,59 @@
 
 .dropdown-container:hover .dropdown-items {
     max-height: 900px;
+    opacity: 1;
+}
+
+/* Hamburger menu & modal styles */
+#hamburger-menu  img {
+    width: 35px;
+}
+.burger {
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+.burger input {
+    display: none;
+}
+.burger #burger-open {
+    display: block;
+}
+.burger #burger-close {
+    display: none;
+}
+.burger input:checked ~ #burger-open {
+    display: none;
+}
+.burger input:checked ~ #burger-close {
+    display: block;
+}
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    width: 300px;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    background-color: #f1f1f1;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sidebar.active {
+    left: 0;
+}
+
+/* Overlay */
+#menu-overlay {
+    opacity: 0;
+    pointer-events: all;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+#menu-overlay.active {
     opacity: 1;
 }
