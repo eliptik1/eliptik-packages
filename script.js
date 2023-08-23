@@ -103,8 +103,82 @@ function createHamburger(buttonContainer, sidebarContainer, sidebarOptional) {
     }
 }
 
+function createCarousel(container, ...imagesArray) {
+    const carouselContainer = document.createElement("div");
+    carouselContainer.className = "carousel-container";
+
+    const leftBtn = document.createElement("button");
+    leftBtn.className = "left-btn";
+    
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "image-container";
+
+    const imagesList = document.createElement("div");
+    imagesList.className = "images-list";
+
+    imagesArray.forEach(url => {
+        const img = document.createElement("img");
+        img.src = url;
+        imagesList.appendChild(img);
+    });
+
+    const rightBtn = document.createElement("button");
+    rightBtn.className = "right-btn";
+
+    const arrow1 = document.createElement("i")
+    const arrow2 = document.createElement("i")
+    arrow1.className = "arrow"
+    arrow2.className = "arrow"
+    rightBtn.appendChild(arrow1)
+    leftBtn.appendChild(arrow2)
+
+    imageContainer.appendChild(imagesList);
+    carouselContainer.appendChild(leftBtn);
+    carouselContainer.appendChild(imageContainer);
+    carouselContainer.appendChild(rightBtn);
+    
+    container.appendChild(carouselContainer);
+    
+    let direction = -1;
+
+    rightBtn.addEventListener("click", slideLeft);
+    leftBtn.addEventListener("click", slideRight);
+
+    function slideLeft() {
+        if(direction === 1) {
+            imagesList.prepend(imagesList.lastElementChild)
+            imageContainer.style.justifyContent = "flex-start"
+            direction = -1;
+        }
+        imagesList.style.transform = `translateX(-450px)`;
+    }
+
+    function slideRight() {
+        if(direction === -1){
+            imagesList.appendChild(imagesList.firstElementChild)
+            direction = 1
+        };
+        imageContainer.style.justifyContent = "flex-end"
+        imagesList.style.transform = `translateX(450px)`;
+    }
+
+    imagesList.addEventListener("transitionend", ()=> {
+        if(direction === -1) {
+            imagesList.appendChild(imagesList.firstElementChild)
+        } else if(direction === 1){
+            imagesList.prepend(imagesList.lastElementChild)
+        }
+        imagesList.style.transition = "none"
+        imagesList.style.transform = `translateX(0px)`;
+        setTimeout(() => {
+            imagesList.style.transition = "all 500ms ease"   
+        });
+    })
+}
+
 export {
     createMenu,
     addMenuItem,
-    createHamburger
+    createHamburger,
+    createCarousel
 };

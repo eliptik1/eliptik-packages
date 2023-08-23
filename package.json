@@ -1,6 +1,6 @@
 {
   "name": "eliptik-packages",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Eliptik's components",
   "main": "script.js",
   "scripts": {

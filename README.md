@@ -43,3 +43,21 @@ If you want to disable the sidebar, add ```false``` to the function,
 ```js 
 createHamburger(navbar, main, false)
 ```
+
+For creating a carousel, 
+Call the function as `createCarousel(carouselContainer, imageLinks)`
+```js 
+const main = document.querySelector('main')
+
+createCarousel(main, 
+    "https://picsum.photos/id/58/450/300",
+    "https://picsum.photos/id/208/450/300",
+    "https://picsum.photos/id/239/450/300")
+```
+You can also add images using relative paths,
+```js 
+createCarousel(main, 
+    src="./images/example-image.png",
+    src="./images/another-image-2.png",
+    )
+```
