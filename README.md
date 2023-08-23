@@ -61,3 +61,6 @@ createCarousel(main,
     src="./images/another-image-2.png",
     )
 ```
+## Contribute
+
+[You can contribute here](https://github.com/eliptik1/eliptik-packages)
